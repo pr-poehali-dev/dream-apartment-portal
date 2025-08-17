@@ -37,36 +37,87 @@ export default function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-24 pb-16 bg-gradient-to-br from-white to-elegant-gray">
+      <section id="home" className="pt-24 pb-16 bg-gradient-to-br from-white to-elegant-gray overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-6xl md:text-7xl font-bold text-elegant-black mb-6 leading-tight">
-              Выиграй<br />
-              <span className="bg-gradient-to-r from-gold to-gold-dark bg-clip-text text-transparent">
-                квартиру мечты
-              </span><br />
-              с ЕМФЦ
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Участвуй в премиальном конкурсе и получи шанс выиграть роскошную квартиру 
-              в престижном районе. Простая регистрация, честный розыгрыш.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-gold to-gold-dark hover:from-gold-dark hover:to-gold text-white text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <Icon name="Trophy" className="mr-2" size={20} />
-                Участвовать в конкурсе
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-gold text-gold hover:bg-gold hover:text-white text-lg px-8 py-6 rounded-lg transition-all duration-300"
-              >
-                <Icon name="Info" className="mr-2" size={20} />
-                Подробнее о призах
-              </Button>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="text-center lg:text-left">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-elegant-black mb-6 leading-tight">
+                Выиграй<br />
+                <span className="bg-gradient-to-r from-gold to-gold-dark bg-clip-text text-transparent">
+                  квартиру мечты
+                </span><br />
+                с ЕМФЦ
+              </h1>
+              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                Участвуй в премиальном конкурсе и получи шанс выиграть роскошную квартиру 
+                в престижном районе. Простая регистрация, честный розыгрыш.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-gold to-gold-dark hover:from-gold-dark hover:to-gold text-white text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <Icon name="Trophy" className="mr-2" size={20} />
+                  Участвовать в конкурсе
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-2 border-gold text-gold hover:bg-gold hover:text-white text-lg px-8 py-6 rounded-lg transition-all duration-300"
+                >
+                  <Icon name="Info" className="mr-2" size={20} />
+                  Подробнее о призах
+                </Button>
+              </div>
+            </div>
+
+            {/* Right Animation */}
+            <div className="relative flex justify-center lg:justify-end">
+              {/* Gift Box Base */}
+              <div className="relative">
+                {/* Box Bottom */}
+                <div className="w-64 h-32 bg-gradient-to-br from-gold-dark to-gold rounded-lg shadow-2xl relative">
+                  {/* Box Pattern */}
+                  <div className="absolute inset-2 border-2 border-gold-light rounded opacity-50"></div>
+                  <div className="absolute inset-4 border border-white/30 rounded opacity-30"></div>
+                </div>
+
+                {/* Box Lid - with opening animation */}
+                <div className="absolute -top-4 left-0 w-64 h-8 bg-gradient-to-br from-gold to-gold-light rounded-lg shadow-lg transform-gpu animate-gift-open origin-bottom">
+                  {/* Ribbon */}
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-full bg-gradient-to-b from-gold-light to-gold"></div>
+                </div>
+
+                {/* Apartment Building emerging from box */}
+                <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 animate-bounce-up" style={{animationDelay: '1s'}}>
+                  <div className="relative animate-float" style={{animationDelay: '2s'}}>
+                    {/* Building Image */}
+                    <img 
+                      src="/img/a70335d7-f147-43b7-be29-488a218ff6b8.jpg" 
+                      alt="Квартира из коробки"
+                      className="w-48 h-48 object-contain drop-shadow-2xl"
+                    />
+                    
+                    {/* Sparkle Effects */}
+                    <div className="absolute -top-2 -right-2 w-4 h-4 bg-gold rounded-full animate-ping"></div>
+                    <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-gold-light rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
+                    <div className="absolute top-1/2 -right-4 w-2 h-2 bg-gold rounded-full animate-pulse"></div>
+                    
+                    {/* Floating particles */}
+                    <div className="absolute top-0 left-1/4 w-1 h-1 bg-gold rounded-full animate-bounce" style={{animationDelay: '0.3s'}}></div>
+                    <div className="absolute top-1/4 right-1/4 w-1 h-1 bg-gold-light rounded-full animate-bounce" style={{animationDelay: '0.7s'}}></div>
+                    <div className="absolute bottom-1/4 left-1/2 w-1 h-1 bg-gold rounded-full animate-bounce" style={{animationDelay: '1s'}}></div>
+                  </div>
+                </div>
+
+                {/* Prize Text Overlay */}
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-center animate-bounce-up" style={{animationDelay: '1.5s'}}>
+                  <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg border border-gold/20">
+                    <span className="text-gold font-bold text-sm">до 25 млн ₽</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
