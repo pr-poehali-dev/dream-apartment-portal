@@ -41,7 +41,45 @@ export default function Index() {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div className="text-center lg:text-left">
+            <div className="text-center lg:text-left relative">
+              {/* Small Gift Box Animation near Title */}
+              <div className="absolute -top-4 -right-8 lg:right-0 hidden md:block">
+                <div className="relative">
+                  {/* Small Gift Box */}
+                  <div className="w-16 h-12 bg-gradient-to-br from-gold to-gold-dark rounded-lg shadow-lg relative">
+                    <div className="absolute inset-1 border border-gold-light rounded opacity-40"></div>
+                    
+                    {/* Bow on top */}
+                    <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 animate-bow-bounce">
+                      <div className="w-6 h-4 bg-gradient-to-b from-gold-light to-gold rounded-full relative">
+                        <div className="absolute top-0 left-1 w-2 h-4 bg-gold-dark rounded-full opacity-60"></div>
+                        <div className="absolute top-0 right-1 w-2 h-4 bg-gold-dark rounded-full opacity-60"></div>
+                      </div>
+                    </div>
+                    
+                    {/* Apartment Photo emerging */}
+                    <div className="absolute -top-6 -right-4 animate-photo-emerge" style={{animationDelay: '0.8s'}}>
+                      <div className="relative">
+                        <img 
+                          src="/img/a23d21e0-128c-415a-854a-6938b6463980.jpg" 
+                          alt="Фото квартиры"
+                          className="w-20 h-16 object-cover rounded-lg shadow-xl border-2 border-white transform rotate-12"
+                        />
+                        
+                        {/* Sparkles around photo */}
+                        <div className="absolute -top-1 -right-1 w-2 h-2 bg-gold rounded-full animate-ping"></div>
+                        <div className="absolute -bottom-1 -left-1 w-1 h-1 bg-gold-light rounded-full animate-pulse"></div>
+                        
+                        {/* Price tag */}
+                        <div className="absolute -bottom-2 -right-2 bg-white px-1 py-0.5 rounded-full shadow-md border border-gold/20">
+                          <span className="text-xs font-bold text-gold">25M₽</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-elegant-black mb-6 leading-tight">
                 Выиграй<br />
                 <span className="bg-gradient-to-r from-gold to-gold-dark bg-clip-text text-transparent">
